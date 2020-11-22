@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="assets/css/mainWindow.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/dark.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/scrollBar.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Math Functions</title>
+</head>
+
+<body>
+  <div class="app">
+    <div class="header">Math Functions</div>
+    <div class="cards">
+      <div class="input card">
+        <div class="card-header">Input</div>
+
+        <div class="card-body">
+          <div class="label">Number:</div>
+          <input class="number">
+          <div class="label">Parameters:</div> 
+          <div class="parameters">
+            <div class="column">
+              <label class="checkbox-container">Absolute
+                <input type="checkbox" id="abs">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Exponential
+                <input type="checkbox" id="exp">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Log
+                <input type="checkbox" id="log">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+
+            <div class="column">
+              <label class="checkbox-container">Sine
+                <input type="checkbox" id="sin">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Cosine
+                <input type="checkbox" id="cos">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Tangent
+                <input type="checkbox" id="tan">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Cosecant
+                <input type="checkbox" id="asin">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Secant
+                <input type="checkbox" id="acos">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Cotangent
+                <input type="checkbox" id="atan">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="column">
+              <label class="checkbox-container">Round up
+                <input type="checkbox" id="ceil">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Round down
+                <input type="checkbox" id="floor">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Round
+                <input type="checkbox" id="round">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="column">
+              <label class="checkbox-container">Maximum
+                <input type="checkbox" id="max">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Minimum
+                <input type="checkbox" id="min">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Power
+                <input type="checkbox" id="pow">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Random
+                <input type="checkbox" id="random">
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">Squareroot
+                <input type="checkbox" id="sqrt">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <button class="submit" onclick="calculate()">Calculate</button>
+        </div>
+      </div>
+
+      <div class="card output-card">
+        <div class="card-header">Output</div>
+        <div class="card-body">
+          <div class="output"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/addElement.js"></script>
+  <script src="assets/js/saveModule.js"></script>
+  <script src="assets/js/mainWindow.js"></script>
+</body>
+
+</html>

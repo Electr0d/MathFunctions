@@ -1,0 +1,206 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  user-select: none;
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+  transition: 0.2s ease-out;
+}
+
+body {
+  background: var(--primary-background);
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.app {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  font-size: 48px;
+  text-transform: uppercase;
+  text-shadow: -3px 3px 1px var(--primary-shadow);
+  font-weight: bold;
+  color: var(--primary-accent)
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+  background: transparent;
+  margin: 10px;
+  backdrop-filter: brightness(0.8);
+}
+
+input:hover { 
+  border-bottom-color: var(--input-border-active);
+}
+
+input:focus {
+  border-color: var(--input-border-active);
+  backdrop-filter: brightness(1);
+}
+
+
+button {
+  background: transparent;
+  border: 2px solid var(--primary-accent);
+  color: var(--primary-accent);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  backdrop-filter: brightness(0.8);
+}
+button:hover {
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+
+button:active {
+  transform: scale(0.95);
+  transition: 0.1s;
+}
+
+
+.card { 
+  min-width: 300px;
+  min-height: 400px;
+  border-radius: 20px;
+  box-shadow: -4px 4px 10px var(--primary-shadow);
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  background: var(--card-background);
+}
+
+.card-header {
+  width: 100%;
+  backdrop-filter: brightness(0.7);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px 0 10px 0;
+  font-size: 26px;
+  color: var(--primary-accent);
+  border-bottom: 1px solid var(--primary-accent);
+  border-radius: 20px 20px 0 0;
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.label {
+  font-size: 18px;
+}
+
+
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  backdrop-filter: brightness(0.6);
+  border-radius: 5px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  backdrop-filter: brightness(1.2);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--primary-accent);
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.checkmark:active {
+  transform: scale(0.8);
+  transition: 0.1s;
+}
+
+
+.parameters {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 0 20px;
+}
+.output-card {
+  height: 500px;
+  width: 350px;
+}
+.output {
+  display: flex;
+  flex-direction: column;
+  background: var(--output-background);
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}

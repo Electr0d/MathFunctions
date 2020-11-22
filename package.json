@@ -1,0 +1,14 @@
+{
+	"name": "math-functions",
+	"version": "1.0.0",
+	"description": "Math Functions",
+	"main": "index.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"author": "Hamza Alsarakbi",
+	"license": "ISC",
+	"devDependencies": {
+		"electron": "^11.0.2"
+	}
+}

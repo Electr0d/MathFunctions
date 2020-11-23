@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/mainWindow.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/addParameter.css">
   <link rel="stylesheet" type="text/css" href="assets/css/dark.css">
   <link rel="stylesheet" type="text/css" href="assets/css/scrollBar.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <title>Math Functions</title>
 </head>
 
@@ -20,10 +22,10 @@
         <div class="card-header">Input</div>
 
         <div class="card-body">
-          <div class="label">Number:</div>
+          <div class="label">Numbers:</div>
           <input class="number">
           <div class="label">Parameters:</div> 
-          <div class="parameters">
+          <div class="parameters" id="input-parameters">
             <div class="column">
               <label class="checkbox-container">Absolute
                 <input type="checkbox" id="abs">
@@ -111,6 +113,9 @@
       <div class="card output-card">
         <div class="card-header">Output</div>
         <div class="card-body">
+          <div class="parameters" id="output-parameters">
+            
+          </div>
           <div class="output"></div>
         </div>
       </div>
@@ -118,6 +123,7 @@
   </div>
 
   <script src="assets/js/addElement.js"></script>
+  <script src="assets/js/addParameter.js"></script>
   <script src="assets/js/saveModule.js"></script>
   <script src="assets/js/mainWindow.js"></script>
 </body>

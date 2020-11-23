@@ -1,4 +1,10 @@
 let data = {};
 let config = {
-  input: 0,
+  input: {
+    numbers: 0,
+    parameters: {}
+  },
+  parameters: {
+    log: false
+  }
 };

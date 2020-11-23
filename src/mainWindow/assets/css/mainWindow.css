@@ -112,6 +112,7 @@ button:active {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  max-height: calc(100% - 63px);
 }
 .label {
   font-size: 18px;
@@ -203,4 +204,115 @@ button:active {
   height: 100%;
   width: 100%;
   border-radius: 10px;
+  overflow: hidden auto;
+}
+
+.output :first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: slide-in 0.2s ease-out;
+  height: 50px;
+  cursor: pointer;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+.row:hover {
+  backdrop-filter: brightness(0.8);
+}
+
+
+.cell {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px;
+  height: 100%;
+}
+.cell:hover {
+  transform: translateX(10px);
+}
+
+.cell-child {
+  font-family: 'Source Code Pro', monospace;
+}
+.prefix {
+  color: var(--prefix-color);
+}
+
+
+.result {
+  color: var(--result-color);
+  margin-left: 10px;
+}
+
+
+.parameters#output-parameters {
+  flex-direction: column;
+}
+
+
+
+.row.highlight {
+  border-color: var(--row-highlight);
+}
+.cell.highlight {
+  transform: translateX(20px);
+
+}
+.toast {
+	font-size: 12px;
+	background: none;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	max-height: 100px;
+	max-width: 80%;
+	animation: toast-slide-in 1.5s ease-out;
+	color: var(--primary-color);
+	background: var(--secondary-background);
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	word-break: break-all;
+	transform: translateX(-50%);
+	animation-fill-mode: forwards;
+}
+
+@keyframes toast-slide-in {
+	0% {
+		transform: translate(-50%, 100%);
+		opacity: 0;
+	}
+	10% {
+		transform: translate(-50%, -20%);
+		opacity: 1;
+	}
+	15% {
+		transform: translate(-50%, 0%);
+	}
+	85% {
+		transform: translate(-50%, 0%);
+	}
+	90% {
+		transform: translate(-50%, -20%);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%, 100%);
+		opacity: 0;
+	}
 }

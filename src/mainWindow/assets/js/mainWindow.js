@@ -16,10 +16,32 @@ function initalize() {
 }
 initalize();
 
+function loadData() {
+	// load input value
+	elements.input.input.value = config.input.input;
+
+  // load parameters
+  let parameters = config.input.parameters;
+  for(let parameter in parameters) {
+    if(parameters[parameter]) document.querySelector('input#' + parameter).checked = true;
+	}
+	
+	// load data
+	for(let row in data) {
+		addRow(data[row].operator, data[row].result);
+	}
+
+}
+
+loadData();
+
+
 
 elements.input.input.addEventListener('input', checkInt);
 
-function checkInt(e) {}
+function checkInt(e) {
+	config.input.input = e.target.value;
+}
 
 function isInt(text) {
 	// convert the text into a number and check if its a NaN (Not a Number). Then reverse the result
@@ -51,8 +73,14 @@ function calculate() {
 			// push to array
 			checked.push(operator);
 			// find resultant and add to output
-			let result = Math[operator](...numbers);
+			let result = String(Math[operator](...numbers));
 			addRow(operator, result);
+			data['row_' + config.index] = {
+				operator: operator,
+				index: config.index,
+				result: result
+			}
+			config.index++;
 		}
 	}
 
@@ -73,7 +101,7 @@ function addRow(operator, result) {
 	let row = addElement('div', { class: 'row', id: operator, onclick: 'copy(this)' }, undefined, elements.output.output);
 	row.addEventListener('contextmenu', highlight);
 	let cell = addElement('div', {class: 'cell', id: operator }, undefined, row);
-	addElement('div', { class: 'cell-child prefix', id: operator }, operator + ' -> ', cell);
+	addElement('div', { class: 'cell-child prefix', id: operator }, operator + ' 🡒 ', cell);
 	addElement('div', { class: 'cell-child result', id: operator }, result, cell);
 }
 
@@ -112,6 +140,7 @@ function copy(e) {
 
 function clearLog() {
 	elements.output.output.innerHTML = '';
+	data = {};
 }
 
 function toggleLog() {
@@ -141,11 +170,6 @@ function highlight(e) {
 }
 
 
-
-
-let params = document.querySelectorAll('.checkbox-container input');
-console.log(params);
-for(let i = 0; i < params.length; i++) {
-	config.input.parameters[params[i].id] = params[i].checked;
+function parameterEdit(e) {
+	config.input.parameters[e.id] = !config.input.parameters[e.id];
 }
-console.log(config);

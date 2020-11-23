@@ -12,7 +12,7 @@ body {
   background: var(--primary-background);
   width: 100vw;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 html {
   box-sizing: border-box;
@@ -21,10 +21,10 @@ html {
   box-sizing: inherit;
 }
 .app {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 40px;
 }
 .header {
   font-size: 48px;
@@ -268,6 +268,7 @@ button:active {
 
 .row.highlight {
   border-color: var(--row-highlight);
+  backdrop-filter: brightness(0.8);
 }
 .cell.highlight {
   transform: translateX(20px);
@@ -313,6 +314,41 @@ button:active {
 	}
 	100% {
 		transform: translate(-50%, 100%);
+		opacity: 0;
+	}
+}
+
+
+
+
+.save {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	width: 70px;
+  animation: save-draw-in 0.3s ease-out;
+}
+
+@keyframes save-draw-in {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	60% {
+		transform: translateX(15%);
+	}
+}
+.save-out {
+	animation: save-draw-out 0.3s ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes save-draw-out {
+	40% {
+		transform: translateX(15%);
+	}
+	100% {
+		transform: translateX(-100%);
 		opacity: 0;
 	}
 }

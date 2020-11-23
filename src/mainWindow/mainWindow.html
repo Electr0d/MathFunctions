@@ -10,11 +10,41 @@
   <link rel="stylesheet" type="text/css" href="assets/css/addParameter.css">
   <link rel="stylesheet" type="text/css" href="assets/css/dark.css">
   <link rel="stylesheet" type="text/css" href="assets/css/scrollBar.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/windowBar.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <title>Math Functions</title>
 </head>
 
 <body>
+
+
+    <!-- Window Controls -->
+    <header id="titlebar">
+      <div id="drag-region">
+          <div id="window-title">
+              <img src="assets/icon/icon.png" height="20px">
+              <span style="padding-left: 10px;">Number Generator</span>
+          </div>
+
+          <div id="window-controls">
+              <div class="button" id="min-button">
+                  <img src="assets/window_icons/minimize.png" class="window-icon">
+              </div>
+              <div class="button" id="max-button">
+                  <img src="assets/window_icons/maximize.png" class="window-icon">
+              </div>
+              <div class="button" id="restore-button">
+                  <img src="assets/window_icons/restore.png" class="window-icon">
+              </div>
+              <div class="button" id="close-button">
+                  <img src="assets/window_icons/close.png" class="window-icon">
+              </div>
+          </div>
+      </div>
+  </header>
+
+
+  
   <div class="app">
     <div class="header">Math Functions</div>
     <div class="cards">
@@ -28,15 +58,15 @@
           <div class="parameters" id="input-parameters">
             <div class="column">
               <label class="checkbox-container">Absolute
-                <input type="checkbox" id="abs">
+                <input type="checkbox" onclick="parameterEdit(this)" id="abs">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Exponential
-                <input type="checkbox" id="exp">
+                <input type="checkbox" onclick="parameterEdit(this)" id="exp">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Log
-                <input type="checkbox" id="log">
+                <input type="checkbox" onclick="parameterEdit(this)" id="log">
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -44,63 +74,63 @@
 
             <div class="column">
               <label class="checkbox-container">Sine
-                <input type="checkbox" id="sin">
+                <input type="checkbox" onclick="parameterEdit(this)" id="sin">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Cosine
-                <input type="checkbox" id="cos">
+                <input type="checkbox" onclick="parameterEdit(this)" id="cos">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Tangent
-                <input type="checkbox" id="tan">
+                <input type="checkbox" onclick="parameterEdit(this)" id="tan">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Cosecant
-                <input type="checkbox" id="asin">
+                <input type="checkbox" onclick="parameterEdit(this)" id="asin">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Secant
-                <input type="checkbox" id="acos">
+                <input type="checkbox" onclick="parameterEdit(this)" id="acos">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Cotangent
-                <input type="checkbox" id="atan">
+                <input type="checkbox" onclick="parameterEdit(this)" id="atan">
                 <span class="checkmark"></span>
               </label>
             </div>
             <div class="column">
               <label class="checkbox-container">Round up
-                <input type="checkbox" id="ceil">
+                <input type="checkbox" onclick="parameterEdit(this)" id="ceil">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Round down
-                <input type="checkbox" id="floor">
+                <input type="checkbox" onclick="parameterEdit(this)" id="floor">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Round
-                <input type="checkbox" id="round">
+                <input type="checkbox" onclick="parameterEdit(this)" id="round">
                 <span class="checkmark"></span>
               </label>
             </div>
             <div class="column">
               <label class="checkbox-container">Maximum
-                <input type="checkbox" id="max">
+                <input type="checkbox" onclick="parameterEdit(this)" id="max">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Minimum
-                <input type="checkbox" id="min">
+                <input type="checkbox" onclick="parameterEdit(this)" id="min">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Power
-                <input type="checkbox" id="pow">
+                <input type="checkbox" onclick="parameterEdit(this)" id="pow">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Random
-                <input type="checkbox" id="random">
+                <input type="checkbox" onclick="parameterEdit(this)" id="random">
                 <span class="checkmark"></span>
               </label>
               <label class="checkbox-container">Squareroot
-                <input type="checkbox" id="sqrt">
+                <input type="checkbox" onclick="parameterEdit(this)" id="sqrt">
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -122,9 +152,10 @@
     </div>
   </div>
 
+  <script src="assets/js/windowControls.js"></script>
   <script src="assets/js/addElement.js"></script>
-  <script src="assets/js/addParameter.js"></script>
   <script src="assets/js/saveModule.js"></script>
+  <script src="assets/js/addParameter.js"></script>
   <script src="assets/js/mainWindow.js"></script>
 </body>
 
